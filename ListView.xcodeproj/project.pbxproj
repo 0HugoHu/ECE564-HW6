@@ -7,18 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C26FA6412AC91AE0001FAE5A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA6402AC91AE0001FAE5A /* Search.swift */; };
+		C26FA6432AC92A6C001FAE5A /* ShadowedDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA6422AC92A6C001FAE5A /* ShadowedDivider.swift */; };
+		C26FA6452AC9ECDE001FAE5A /* NoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA6442AC9ECDE001FAE5A /* NoResult.swift */; };
+		C26FA6482ACA0136001FAE5A /* BackgroundRemoval in Frameworks */ = {isa = PBXBuildFile; productRef = C26FA6472ACA0136001FAE5A /* BackgroundRemoval */; };
+		C26FA64D2ACA20B8001FAE5A /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA64C2ACA20B8001FAE5A /* BarView.swift */; };
+		C26FA6502ACA2110001FAE5A /* DukeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA64F2ACA2110001FAE5A /* DukeStatsView.swift */; };
+		C26FA6522ACA21CC001FAE5A /* DukeStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA6512ACA21CC001FAE5A /* DukeStatsViewModel.swift */; };
+		C26FA6602ACA5EB5001FAE5A /* hw5-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA6542ACA5EB5001FAE5A /* hw5-6.png */; };
+		C26FA6612ACA5EB5001FAE5A /* hw5-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA6552ACA5EB5001FAE5A /* hw5-1.png */; };
+		C26FA6622ACA5EB5001FAE5A /* hw5-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA6562ACA5EB5001FAE5A /* hw5-2.png */; };
+		C26FA6632ACA5EB5001FAE5A /* hw5-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA6572ACA5EB5001FAE5A /* hw5-4.png */; };
+		C26FA6642ACA5EB5001FAE5A /* hw5-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA6582ACA5EB5001FAE5A /* hw5-5.png */; };
+		C26FA6652ACA5EB5001FAE5A /* hw5-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA6592ACA5EB5001FAE5A /* hw5-7.png */; };
+		C26FA6662ACA5EB5001FAE5A /* hw5-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA65A2ACA5EB5001FAE5A /* hw5-3.png */; };
+		C26FA6672ACA5EB5001FAE5A /* hw5-10.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA65B2ACA5EB5001FAE5A /* hw5-10.png */; };
+		C26FA6682ACA5EB5001FAE5A /* hw5-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA65C2ACA5EB5001FAE5A /* hw5-8.png */; };
+		C26FA6692ACA5EB5001FAE5A /* hw5-11.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA65D2ACA5EB5001FAE5A /* hw5-11.png */; };
+		C26FA66A2ACA5EB5001FAE5A /* hw5-12.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA65E2ACA5EB5001FAE5A /* hw5-12.png */; };
+		C26FA66B2ACA5EB5001FAE5A /* hw5-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C26FA65F2ACA5EB5001FAE5A /* hw5-9.png */; };
+		C26FA66D2ACA5EFD001FAE5A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C26FA66C2ACA5EFD001FAE5A /* README.md */; };
 		C2F69C882AC627AC00AB47D6 /* ListViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69C872AC627AC00AB47D6 /* ListViewApp.swift */; };
 		C2F69C8A2AC627AC00AB47D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69C892AC627AC00AB47D6 /* ContentView.swift */; };
 		C2F69C8C2AC627AD00AB47D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F69C8B2AC627AD00AB47D6 /* Assets.xcassets */; };
 		C2F69C8F2AC627AD00AB47D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F69C8E2AC627AD00AB47D6 /* Preview Assets.xcassets */; };
+		C2F69C982AC6346900AB47D6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69C972AC6346900AB47D6 /* DataModel.swift */; };
+		C2F69C9A2AC6348500AB47D6 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69C992AC6348500AB47D6 /* DataStructures.swift */; };
+		C2F69C9D2AC634F700AB47D6 /* DownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69C9C2AC634F700AB47D6 /* DownloadVC.swift */; };
+		C2F69CA02AC6353100AB47D6 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69C9F2AC6353100AB47D6 /* Strings.swift */; };
+		C2F69CA32AC6354E00AB47D6 /* GetPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69CA22AC6354E00AB47D6 /* GetPath.swift */; };
+		C2F69CA52AC6358100AB47D6 /* GetImageBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69CA42AC6358100AB47D6 /* GetImageBase64.swift */; };
+		C2F69CA92AC658EE00AB47D6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69CA82AC658EE00AB47D6 /* GradientView.swift */; };
+		C2F69CAD2AC6679A00AB47D6 /* DukePeopleListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69CAC2AC6679A00AB47D6 /* DukePeopleListItem.swift */; };
+		C2F69CAF2AC6680100AB47D6 /* DukePeopleListDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69CAE2AC6680100AB47D6 /* DukePeopleListDetails.swift */; };
+		C2F69CB32AC6686800AB47D6 /* DukePeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69CB22AC6686800AB47D6 /* DukePeopleList.swift */; };
+		C2F69CB52AC66F8B00AB47D6 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F69CB42AC66F8B00AB47D6 /* CircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C2F69C842AC627AC00AB47D6 /* ListView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C26FA63E2AC72C50001FAE5A /* Hugo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hugo-Info.plist"; sourceTree = "<group>"; };
+		C26FA6402AC91AE0001FAE5A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		C26FA6422AC92A6C001FAE5A /* ShadowedDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedDivider.swift; sourceTree = "<group>"; };
+		C26FA6442AC9ECDE001FAE5A /* NoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResult.swift; sourceTree = "<group>"; };
+		C26FA64C2ACA20B8001FAE5A /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		C26FA64F2ACA2110001FAE5A /* DukeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DukeStatsView.swift; sourceTree = "<group>"; };
+		C26FA6512ACA21CC001FAE5A /* DukeStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DukeStatsViewModel.swift; sourceTree = "<group>"; };
+		C26FA6542ACA5EB5001FAE5A /* hw5-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-6.png"; sourceTree = "<group>"; };
+		C26FA6552ACA5EB5001FAE5A /* hw5-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-1.png"; sourceTree = "<group>"; };
+		C26FA6562ACA5EB5001FAE5A /* hw5-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-2.png"; sourceTree = "<group>"; };
+		C26FA6572ACA5EB5001FAE5A /* hw5-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-4.png"; sourceTree = "<group>"; };
+		C26FA6582ACA5EB5001FAE5A /* hw5-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-5.png"; sourceTree = "<group>"; };
+		C26FA6592ACA5EB5001FAE5A /* hw5-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-7.png"; sourceTree = "<group>"; };
+		C26FA65A2ACA5EB5001FAE5A /* hw5-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-3.png"; sourceTree = "<group>"; };
+		C26FA65B2ACA5EB5001FAE5A /* hw5-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-10.png"; sourceTree = "<group>"; };
+		C26FA65C2ACA5EB5001FAE5A /* hw5-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-8.png"; sourceTree = "<group>"; };
+		C26FA65D2ACA5EB5001FAE5A /* hw5-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-11.png"; sourceTree = "<group>"; };
+		C26FA65E2ACA5EB5001FAE5A /* hw5-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-12.png"; sourceTree = "<group>"; };
+		C26FA65F2ACA5EB5001FAE5A /* hw5-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hw5-9.png"; sourceTree = "<group>"; };
+		C26FA66C2ACA5EFD001FAE5A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C2F69C842AC627AC00AB47D6 /* Hugo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hugo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F69C872AC627AC00AB47D6 /* ListViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewApp.swift; sourceTree = "<group>"; };
 		C2F69C892AC627AC00AB47D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C2F69C8B2AC627AD00AB47D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2F69C8E2AC627AD00AB47D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C2F69C972AC6346900AB47D6 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		C2F69C992AC6348500AB47D6 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		C2F69C9C2AC634F700AB47D6 /* DownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadVC.swift; sourceTree = "<group>"; };
+		C2F69C9F2AC6353100AB47D6 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		C2F69CA22AC6354E00AB47D6 /* GetPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPath.swift; sourceTree = "<group>"; };
+		C2F69CA42AC6358100AB47D6 /* GetImageBase64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageBase64.swift; sourceTree = "<group>"; };
+		C2F69CA82AC658EE00AB47D6 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		C2F69CAC2AC6679A00AB47D6 /* DukePeopleListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DukePeopleListItem.swift; sourceTree = "<group>"; };
+		C2F69CAE2AC6680100AB47D6 /* DukePeopleListDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DukePeopleListDetails.swift; sourceTree = "<group>"; };
+		C2F69CB22AC6686800AB47D6 /* DukePeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DukePeopleList.swift; sourceTree = "<group>"; };
+		C2F69CB42AC66F8B00AB47D6 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,15 +88,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C26FA6482ACA0136001FAE5A /* BackgroundRemoval in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C26FA6492ACA1F64001FAE5A /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				C26FA6422AC92A6C001FAE5A /* ShadowedDivider.swift */,
+				C26FA64C2ACA20B8001FAE5A /* BarView.swift */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
+		C26FA64E2ACA20FC001FAE5A /* StatsView */ = {
+			isa = PBXGroup;
+			children = (
+				C26FA64F2ACA2110001FAE5A /* DukeStatsView.swift */,
+			);
+			path = StatsView;
+			sourceTree = "<group>";
+		};
+		C26FA6532ACA5E58001FAE5A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C26FA6552ACA5EB5001FAE5A /* hw5-1.png */,
+				C26FA6562ACA5EB5001FAE5A /* hw5-2.png */,
+				C26FA65A2ACA5EB5001FAE5A /* hw5-3.png */,
+				C26FA6572ACA5EB5001FAE5A /* hw5-4.png */,
+				C26FA6582ACA5EB5001FAE5A /* hw5-5.png */,
+				C26FA6542ACA5EB5001FAE5A /* hw5-6.png */,
+				C26FA6592ACA5EB5001FAE5A /* hw5-7.png */,
+				C26FA65C2ACA5EB5001FAE5A /* hw5-8.png */,
+				C26FA65F2ACA5EB5001FAE5A /* hw5-9.png */,
+				C26FA65B2ACA5EB5001FAE5A /* hw5-10.png */,
+				C26FA65D2ACA5EB5001FAE5A /* hw5-11.png */,
+				C26FA65E2ACA5EB5001FAE5A /* hw5-12.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		C2F69C7B2AC627AB00AB47D6 = {
 			isa = PBXGroup;
 			children = (
+				C26FA66C2ACA5EFD001FAE5A /* README.md */,
+				C26FA6532ACA5E58001FAE5A /* Assets */,
+				C26FA63E2AC72C50001FAE5A /* Hugo-Info.plist */,
 				C2F69C862AC627AC00AB47D6 /* ListView */,
 				C2F69C852AC627AC00AB47D6 /* Products */,
 			);
@@ -43,7 +145,7 @@
 		C2F69C852AC627AC00AB47D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2F69C842AC627AC00AB47D6 /* ListView.app */,
+				C2F69C842AC627AC00AB47D6 /* Hugo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +153,12 @@
 		C2F69C862AC627AC00AB47D6 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
+				C2F69CAA2AC6592B00AB47D6 /* View */,
+				C2F69CA12AC6353E00AB47D6 /* Util */,
+				C2F69C9E2AC6351D00AB47D6 /* Constant */,
+				C2F69C9B2AC634E000AB47D6 /* Controller */,
+				C2F69C952AC6341100AB47D6 /* Model */,
 				C2F69C872AC627AC00AB47D6 /* ListViewApp.swift */,
-				C2F69C892AC627AC00AB47D6 /* ContentView.swift */,
 				C2F69C8B2AC627AD00AB47D6 /* Assets.xcassets */,
 				C2F69C8D2AC627AD00AB47D6 /* Preview Content */,
 			);
@@ -67,12 +173,80 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C2F69C952AC6341100AB47D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2F69C972AC6346900AB47D6 /* DataModel.swift */,
+				C2F69C992AC6348500AB47D6 /* DataStructures.swift */,
+				C26FA6512ACA21CC001FAE5A /* DukeStatsViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2F69C9B2AC634E000AB47D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C2F69C9C2AC634F700AB47D6 /* DownloadVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C2F69C9E2AC6351D00AB47D6 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				C2F69C9F2AC6353100AB47D6 /* Strings.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		C2F69CA12AC6353E00AB47D6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C2F69CA22AC6354E00AB47D6 /* GetPath.swift */,
+				C2F69CA42AC6358100AB47D6 /* GetImageBase64.swift */,
+				C2F69CA82AC658EE00AB47D6 /* GradientView.swift */,
+				C2F69CB42AC66F8B00AB47D6 /* CircleImage.swift */,
+				C26FA6402AC91AE0001FAE5A /* Search.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C2F69CAA2AC6592B00AB47D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C26FA64E2ACA20FC001FAE5A /* StatsView */,
+				C26FA6492ACA1F64001FAE5A /* Draw */,
+				C2F69CB02AC6684600AB47D6 /* ListView */,
+				C2F69CAB2AC6678700AB47D6 /* Item */,
+				C2F69C892AC627AC00AB47D6 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2F69CAB2AC6678700AB47D6 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				C2F69CAC2AC6679A00AB47D6 /* DukePeopleListItem.swift */,
+				C26FA6442AC9ECDE001FAE5A /* NoResult.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		C2F69CB02AC6684600AB47D6 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				C2F69CAE2AC6680100AB47D6 /* DukePeopleListDetails.swift */,
+				C2F69CB22AC6686800AB47D6 /* DukePeopleList.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C2F69C832AC627AC00AB47D6 /* ListView */ = {
+		C2F69C832AC627AC00AB47D6 /* Hugo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2F69C922AC627AD00AB47D6 /* Build configuration list for PBXNativeTarget "ListView" */;
+			buildConfigurationList = C2F69C922AC627AD00AB47D6 /* Build configuration list for PBXNativeTarget "Hugo" */;
 			buildPhases = (
 				C2F69C802AC627AC00AB47D6 /* Sources */,
 				C2F69C812AC627AC00AB47D6 /* Frameworks */,
@@ -82,9 +256,12 @@
 			);
 			dependencies = (
 			);
-			name = ListView;
+			name = Hugo;
+			packageProductDependencies = (
+				C26FA6472ACA0136001FAE5A /* BackgroundRemoval */,
+			);
 			productName = ListView;
-			productReference = C2F69C842AC627AC00AB47D6 /* ListView.app */;
+			productReference = C2F69C842AC627AC00AB47D6 /* Hugo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,11 +288,14 @@
 				Base,
 			);
 			mainGroup = C2F69C7B2AC627AB00AB47D6;
+			packageReferences = (
+				C26FA6462ACA0136001FAE5A /* XCRemoteSwiftPackageReference "BackgroundRemoval" */,
+			);
 			productRefGroup = C2F69C852AC627AC00AB47D6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C2F69C832AC627AC00AB47D6 /* ListView */,
+				C2F69C832AC627AC00AB47D6 /* Hugo */,
 			);
 		};
 /* End PBXProject section */
@@ -125,8 +305,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C26FA6692ACA5EB5001FAE5A /* hw5-11.png in Resources */,
 				C2F69C8F2AC627AD00AB47D6 /* Preview Assets.xcassets in Resources */,
+				C26FA6682ACA5EB5001FAE5A /* hw5-8.png in Resources */,
+				C26FA6672ACA5EB5001FAE5A /* hw5-10.png in Resources */,
+				C26FA6662ACA5EB5001FAE5A /* hw5-3.png in Resources */,
+				C26FA6632ACA5EB5001FAE5A /* hw5-4.png in Resources */,
+				C26FA66B2ACA5EB5001FAE5A /* hw5-9.png in Resources */,
+				C26FA66A2ACA5EB5001FAE5A /* hw5-12.png in Resources */,
+				C26FA6602ACA5EB5001FAE5A /* hw5-6.png in Resources */,
+				C26FA6612ACA5EB5001FAE5A /* hw5-1.png in Resources */,
+				C26FA6652ACA5EB5001FAE5A /* hw5-7.png in Resources */,
+				C26FA6642ACA5EB5001FAE5A /* hw5-5.png in Resources */,
+				C26FA66D2ACA5EFD001FAE5A /* README.md in Resources */,
 				C2F69C8C2AC627AD00AB47D6 /* Assets.xcassets in Resources */,
+				C26FA6622ACA5EB5001FAE5A /* hw5-2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +331,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2F69C8A2AC627AC00AB47D6 /* ContentView.swift in Sources */,
+				C26FA64D2ACA20B8001FAE5A /* BarView.swift in Sources */,
+				C26FA6432AC92A6C001FAE5A /* ShadowedDivider.swift in Sources */,
+				C2F69CB32AC6686800AB47D6 /* DukePeopleList.swift in Sources */,
+				C2F69CB52AC66F8B00AB47D6 /* CircleImage.swift in Sources */,
+				C2F69CA92AC658EE00AB47D6 /* GradientView.swift in Sources */,
+				C26FA6452AC9ECDE001FAE5A /* NoResult.swift in Sources */,
+				C2F69CA32AC6354E00AB47D6 /* GetPath.swift in Sources */,
+				C26FA6502ACA2110001FAE5A /* DukeStatsView.swift in Sources */,
+				C2F69C9A2AC6348500AB47D6 /* DataStructures.swift in Sources */,
+				C2F69C9D2AC634F700AB47D6 /* DownloadVC.swift in Sources */,
 				C2F69C882AC627AC00AB47D6 /* ListViewApp.swift in Sources */,
+				C2F69CA02AC6353100AB47D6 /* Strings.swift in Sources */,
+				C2F69C982AC6346900AB47D6 /* DataModel.swift in Sources */,
+				C2F69CAF2AC6680100AB47D6 /* DukePeopleListDetails.swift in Sources */,
+				C2F69CA52AC6358100AB47D6 /* GetImageBase64.swift in Sources */,
+				C26FA6522ACA21CC001FAE5A /* DukeStatsViewModel.swift in Sources */,
+				C2F69CAD2AC6679A00AB47D6 /* DukePeopleListItem.swift in Sources */,
+				C26FA6412AC91AE0001FAE5A /* Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -275,17 +485,21 @@
 				DEVELOPMENT_TEAM = 8A82Z8N5J2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hugo-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Hugo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.yh342.ListView;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.yh342;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -304,17 +518,21 @@
 				DEVELOPMENT_TEAM = 8A82Z8N5J2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hugo-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Hugo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.yh342.ListView;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.yh342;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -334,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2F69C922AC627AD00AB47D6 /* Build configuration list for PBXNativeTarget "ListView" */ = {
+		C2F69C922AC627AD00AB47D6 /* Build configuration list for PBXNativeTarget "Hugo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2F69C932AC627AD00AB47D6 /* Debug */,
@@ -344,6 +562,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C26FA6462ACA0136001FAE5A /* XCRemoteSwiftPackageReference "BackgroundRemoval" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ezaldeen99/BackgroundRemoval.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C26FA6472ACA0136001FAE5A /* BackgroundRemoval */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C26FA6462ACA0136001FAE5A /* XCRemoteSwiftPackageReference "BackgroundRemoval" */;
+			productName = BackgroundRemoval;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C2F69C7C2AC627AB00AB47D6 /* Project object */;
 }

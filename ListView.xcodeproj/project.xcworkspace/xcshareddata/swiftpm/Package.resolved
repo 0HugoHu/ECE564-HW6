@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "backgroundremoval",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Ezaldeen99/BackgroundRemoval.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "214bfa49040ccab90f485c70cc2615eeb0d1d291"
+      }
+    }
+  ],
+  "version" : 2
+}

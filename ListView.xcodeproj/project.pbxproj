@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C24DB47B2AD1F89A00C0A22D /* AddEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24DB47A2AD1F89A00C0A22D /* AddEditView.swift */; };
 		C26FA6412AC91AE0001FAE5A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA6402AC91AE0001FAE5A /* Search.swift */; };
 		C26FA6432AC92A6C001FAE5A /* ShadowedDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA6422AC92A6C001FAE5A /* ShadowedDivider.swift */; };
 		C26FA6452AC9ECDE001FAE5A /* NoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FA6442AC9ECDE001FAE5A /* NoResult.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C24DB47A2AD1F89A00C0A22D /* AddEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditView.swift; sourceTree = "<group>"; };
 		C26FA63E2AC72C50001FAE5A /* Hugo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hugo-Info.plist"; sourceTree = "<group>"; };
 		C26FA6402AC91AE0001FAE5A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		C26FA6422AC92A6C001FAE5A /* ShadowedDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedDivider.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C24DB4792AD1F88F00C0A22D /* AddEditView */ = {
+			isa = PBXGroup;
+			children = (
+				C24DB47A2AD1F89A00C0A22D /* AddEditView.swift */,
+			);
+			path = AddEditView;
+			sourceTree = "<group>";
+		};
 		C26FA6492ACA1F64001FAE5A /* Draw */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +224,7 @@
 		C2F69CAA2AC6592B00AB47D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C24DB4792AD1F88F00C0A22D /* AddEditView */,
 				C26FA64E2ACA20FC001FAE5A /* StatsView */,
 				C26FA6492ACA1F64001FAE5A /* Draw */,
 				C2F69CB02AC6684600AB47D6 /* ListView */,
@@ -348,6 +359,7 @@
 				C2F69CA52AC6358100AB47D6 /* GetImageBase64.swift in Sources */,
 				C26FA6522ACA21CC001FAE5A /* DukeStatsViewModel.swift in Sources */,
 				C2F69CAD2AC6679A00AB47D6 /* DukePeopleListItem.swift in Sources */,
+				C24DB47B2AD1F89A00C0A22D /* AddEditView.swift in Sources */,
 				C26FA6412AC91AE0001FAE5A /* Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

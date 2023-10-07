@@ -128,6 +128,7 @@ class DukePersonDict : NSObject, URLSessionDownloadDelegate, ObservableObject {
     var errorMessage = ""
     var replaceFlag = true
     var replaceDUIDFlag = false
+    var downloadReplace = false
     
     
     private lazy var urlSession: URLSession = {
@@ -354,6 +355,9 @@ class DukePersonDict : NSObject, URLSessionDownloadDelegate, ObservableObject {
                     dukePeopleArray[i].email.replace("‎ ", with: "")
                 }
                 DispatchQueue.main.async {
+                    if (self.downloadReplace) {
+                        self.people = [Int: DukePerson]()
+                    }
                     for dukePerson in dukePeopleArray {
                         self.people[dukePerson.DUID] = dukePerson
                     }

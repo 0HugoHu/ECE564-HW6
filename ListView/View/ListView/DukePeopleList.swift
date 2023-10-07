@@ -13,9 +13,13 @@ struct DukePeopleList: View {
     @State private var showDownloadIcon = true
     @State private var showDownloadingProgress = false
     @State private var showAdvanceSearch = false
+    @State private var showDownloadMoreOptions = false
     @State private var searchText = ""
     @State private var isRegexSearch = false
     @State private var isFieldSearch = false
+    @State private var downloadReplace = false
+    @State private var isEditViewActive = false
+    @State private var selectedDUID: Int = -1
     
     var peopleList: [DukePerson] {
         return Array(dataModel.people.values)
@@ -30,10 +34,26 @@ struct DukePeopleList: View {
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .padding(.leading, 16)
-                            .padding(.top, 16)
-                            .padding(.bottom, -8)
                         Spacer()
+                        
+                        Button(action: {
+                            selectedDUID = -1
+                            isEditViewActive = true
+                        }) {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(Color.gray)
+                                .rotationEffect(.degrees(360))
+                        }
+                        .background(Color.white)
+                        .clipShape(Circle())
+                        .padding(.trailing, 16)
+                        
                     }
+                    .padding(.top, 16)
+                    .padding(.bottom, -8)
+                    
                     ZStack(alignment: .leading) {
                         TextField("Search any keywords", text: $searchText)
                             .padding(.leading, 36)
@@ -136,7 +156,22 @@ struct DukePeopleList: View {
                                     ) {
                                         DukePeopleListItem(dukePerson: professor)
                                     }
-                                    .listRowSeparator(.hidden)
+                                    .swipeActions {
+                                        Button(action: {
+                                            if dataModel.delete(professor.DUID) {}
+                                        }) {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+                                        .tint(.red)
+                                        
+                                        Button(action: {
+                                            selectedDUID = professor.DUID
+                                            isEditViewActive = true
+                                        }) {
+                                            Label("Edit", systemImage: "pencil")
+                                        }
+                                        .tint(.blue)
+                                    }
                                 }
                             } else {
                                 NoResult()
@@ -153,6 +188,22 @@ struct DukePeopleList: View {
                                     ) {
                                         DukePeopleListItem(dukePerson: ta)
                                     }
+                                    .swipeActions {
+                                        Button(action: {
+                                            if dataModel.delete(ta.DUID) {}
+                                        }) {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+                                        .tint(.red)
+                                        
+                                        Button(action: {
+                                            selectedDUID = ta.DUID
+                                            isEditViewActive = true
+                                        }) {
+                                            Label("Edit", systemImage: "pencil")
+                                        }
+                                        .tint(.blue)
+                                    }
                                 }
                             } else {
                                 NoResult()
@@ -168,6 +219,54 @@ struct DukePeopleList: View {
                                         destination: DukePeopleListDetails(dukePerson: student)
                                     ) {
                                         DukePeopleListItem(dukePerson: student)
+                                    }
+                                    .swipeActions {
+                                        Button(action: {
+                                            if dataModel.delete(student.DUID) {}
+                                        }) {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+                                        .tint(.red)
+                                        
+                                        Button(action: {
+                                            selectedDUID = student.DUID
+                                            isEditViewActive = true
+                                        }) {
+                                            Label("Edit", systemImage: "pencil")
+                                        }
+                                        .tint(.blue)
+                                    }
+                                }
+                            } else {
+                                NoResult()
+                            }
+                        }
+                        .listRowSeparator(.hidden)
+                        
+                        Section(header: Text("Others").font(.title2).fontWeight(.bold)) {
+                            let filteredOthers = filterByRole(.Other, searchText, peopleList, isRegexSearch, isFieldSearch)
+                            if !filteredOthers.isEmpty {
+                                ForEach(filteredOthers, id: \.DUID) { others in
+                                    NavigationLink(
+                                        destination: DukePeopleListDetails(dukePerson: others)
+                                    ) {
+                                        DukePeopleListItem(dukePerson: others)
+                                    }
+                                    .swipeActions {
+                                        Button(action: {
+                                            if dataModel.delete(others.DUID) {}
+                                        }) {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+                                        .tint(.red)
+                                        
+                                        Button(action: {
+                                            selectedDUID = others.DUID
+                                            isEditViewActive = true
+                                        }) {
+                                            Label("Edit", systemImage: "pencil")
+                                        }
+                                        .tint(.blue)
                                     }
                                 }
                             } else {
@@ -201,35 +300,133 @@ struct DukePeopleList: View {
                     HStack {
                         Spacer()
                         VStack {
-                            Button(action: {
-                                if !dataModel.isDownloading {
-                                    if !showDownloadIcon {
+                            if (!showDownloadMoreOptions) {
+                                Button(action: {
+                                    if !dataModel.isDownloading {
                                         if (dataModel.reset()) {
                                             showDownloadingProgress = false
                                             showDownloadIcon = true
                                         }
-                                    } else {
-                                        showDownloadingProgress = true
-                                        showDownloadIcon = false
-                                        if dataModel.download(website: url, auth: authString) {
-                                            print("Downloaded")
-                                        } else {
-                                            print("Failed to download")
-                                        }
                                     }
+                                }) {
+                                    Image(systemName: "arrow.clockwise.circle.fill")
+                                        .resizable()
+                                        .frame(width: 48, height: 48)
+                                        .foregroundColor(Color.red)
+                                        .rotationEffect(.degrees(360))
                                 }
-                            }) {
-                                Image(systemName: !showDownloadIcon ? "arrow.clockwise.circle.fill" : "arrow.down.circle.fill")
-                                    .resizable()
-                                    .frame(width: 48, height: 48)
-                                    .foregroundColor(!showDownloadIcon ? Color.red : Color.accentColor)
-                                    .rotationEffect(.degrees(!showDownloadIcon ? 360 : 0))
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .padding(.trailing, 16)
+                                .padding(.bottom, 16)
+                                .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
+                                
+                                Button(action: {
+                                    if !dataModel.isDownloading {
+                                        showDownloadMoreOptions = true
+                                    }
+                                }) {
+                                    Image(systemName: "arrow.down.circle.fill")
+                                        .resizable()
+                                        .frame(width: 48, height: 48)
+                                        .foregroundColor(Color.accentColor)
+                                }
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .padding(.trailing, 16)
+                                .padding(.bottom, 48)
+                                .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
+                                
+                            } else {
+                                Button(action: {
+                                    showDownloadMoreOptions = false
+                                    downloadReplace = true
+                                    showDownloadingProgress = true
+                                    showDownloadIcon = false
+                                    dataModel.downloadReplace = true
+                                    if dataModel.download(website: url, auth: authString) {
+                                        print("Downloaded")
+                                    } else {
+                                        print("Failed to download")
+                                    }
+                                }) {
+                                    Image(systemName: "arrow.uturn.right.circle.fill")
+                                        .resizable()
+                                        .frame(width: 48, height: 48)
+                                        .foregroundColor(Color.accentColor)
+                                }
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .padding(.trailing, 16)
+                                .padding(.bottom, 16)
+                                .offset(y: -74)
+                                .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
+                                
+                                Text("Replace")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.trailing, 16)
+                                    .padding(.top, -16)
+                                    .offset(y: -74)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 3)
+                                    
+                                Button(action: {
+                                    showDownloadMoreOptions = false
+                                    downloadReplace = true
+                                    showDownloadingProgress = true
+                                    showDownloadIcon = false
+                                    dataModel.downloadReplace = false
+                                    if dataModel.download(website: url, auth: authString) {
+                                        print("Downloaded")
+                                    } else {
+                                        print("Failed to download")
+                                    }
+                                }) {
+                                    Image(systemName: "arrow.down.to.line.circle.fill")
+                                        .resizable()
+                                        .frame(width: 48, height: 48)
+                                        .foregroundColor(Color.accentColor)
+                                }
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .offset(y: -64)
+                                .padding(.trailing, 16)
+                                .padding(.bottom, 16)
+                                .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
+                                
+                                Text("Update")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.accentColor)
+                                    .padding(.trailing, 16)
+                                    .padding(.bottom, 16)
+                                    .offset(y: -64)
+                                    .padding(.top, -16)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 3)
+                                
+                                Button(action: {
+                                    showDownloadMoreOptions = false
+                                }) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .resizable()
+                                        .frame(width: 48, height: 48)
+                                        .foregroundColor(Color.red)
+                                }
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .offset(y: -74)
+                                .padding(.trailing, 16)
+                                .padding(.bottom, 16)
+                                .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
+                                
+                                Text("Cancel")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.red)
+                                    .padding(.trailing, 16)
+                                    .padding(.bottom, 16)
+                                    .offset(y: -74)
+                                    .padding(.top, -16)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 3)
                             }
-                            .background(Color.white)
-                            .clipShape(Circle())
-                            .padding(.trailing, 16)
-                            .padding(.bottom, 16)
-                            .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
                         }
                     }
                     .frame(minHeight: 0, maxHeight: 48)
@@ -270,6 +467,11 @@ struct DukePeopleList: View {
                     showDownloadIcon = false
                 }
             }
+            .blur(radius: isEditViewActive ? 10 : 0)
+            .sheet(isPresented: $isEditViewActive) {
+                AddEditView(DUID: selectedDUID).environmentObject(dataModel)
+            }
+            
             ShadowedDivider()
                 .rotationEffect(.degrees(180))
         }

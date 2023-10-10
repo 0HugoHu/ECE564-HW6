@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Funeral-Frame-Border-PNG-Clipart 2.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Funeral-Frame-Border-PNG-Clipart 1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Funeral-Frame-Border-PNG-Clipart.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

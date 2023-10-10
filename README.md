@@ -18,6 +18,7 @@
 - Floating second-level button added for choosing download/replace or download/update
 - Fixed stats view error
 
+| | | | |
 |---|---|---|---|
 |![](Assets/hw5n-30.PNG)|![](Assets/hw5n-1.PNG)|![](Assets/hw5-29.PNG)|![](Assets/hw5-28.PNG)|
 |![](Assets/hw5n-27.PNG)|![](Assets/hw5n-26.PNG)|![](Assets/hw5-16.PNG)|![](Assets/hw5-14.PNG)|
@@ -26,7 +27,7 @@
 |![](Assets/hw5n-9.PNG)|![](Assets/hw5n-7.PNG)|![](Assets/hw5-10.PNG)|![](Assets/hw5-11.PNG)|
 |![](Assets/hw5n-12.PNG)|![](Assets/hw5n-13.PNG)|![](Assets/hw5-18.PNG)|![](Assets/hw5-19.PNG)|
 |![](Assets/hw5n-24.PNG)|![](Assets/hw5n-20.PNG)|![](Assets/hw5-21.PNG)|![](Assets/hw5-22.PNG)|
-|![](Assets/hw5n-31.PNG)|![](Assets/hw5n-32.PNG)|![](Assets/hw5-23.PNG)|![](Assets/hw5-25.PNG)
+|![](Assets/hw5n-31.PNG)|![](Assets/hw5n-32.PNG)|![](Assets/hw5-23.PNG)|![](Assets/hw5-25.PNG)|
 
 
 ### 2.Camera Support

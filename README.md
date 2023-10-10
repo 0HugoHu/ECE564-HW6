@@ -7,6 +7,7 @@
 - **To use the camera feature, please run the app on a real device (not simulator).**
 - **For the first time running the app, the system will ask you permission for network access, even if you grant access, the download may stuck at 0% for a while, please be patient, or just restart the app.**
 - **I don't let user to manually put any string for the field Program and Plan, because I want to keep the data consistent. So I use a picker for these two fields. For existing weird strings, I used some tricks to convert them into my enum types.**
+- **I don't adapt dark mode, so please don't use dark mode on your phone, thanks.**
 
 ## Extra Functionality
 

@@ -18,16 +18,15 @@
 - Floating second-level button added for choosing download/replace or download/update
 - Fixed stats view error
 
-
-|![](Assets/hw5n-30.png)|![](Assets/hw5n-1.png)|![](Assets/hw5-29.png)|![](Assets/hw5-28.png)|
-|![](Assets/hw5n-27.png)|![](Assets/hw5n-26.png)|![](Assets/hw5-16.png)|![](Assets/hw5-14.png)|
-|![](Assets/hw5n-8.png)|![](Assets/hw5n-5.png)|![](Assets/hw5-6.png)|![](Assets/hw5-4.png)|
-|![](Assets/hw5n-3.png)|![](Assets/hw5n-2.png)|![](Assets/hw5-17.png)|![](Assets/hw5-15.png)|
-|![](Assets/hw5n-9.png)|![](Assets/hw5n-7.png)|![](Assets/hw5-10.png)|![](Assets/hw5-11.png)|
-|![](Assets/hw5n-12.png)|![](Assets/hw5n-13.png)|![](Assets/hw5-18.png)|![](Assets/hw5-19.png)|
-|![](Assets/hw5n-24.png)|![](Assets/hw5n-20.png)|![](Assets/hw5-21.png)|![](Assets/hw5-22.png)|
-|![](Assets/hw5n-31.png)|![](Assets/hw5n-32.png)|![](Assets/hw5-23.png)|![](Assets/hw5-25.png)
 |---|---|---|---|
+|![](Assets/hw5n-30.PNG)|![](Assets/hw5n-1.PNG)|![](Assets/hw5-29.PNG)|![](Assets/hw5-28.PNG)|
+|![](Assets/hw5n-27.PNG)|![](Assets/hw5n-26.PNG)|![](Assets/hw5-16.PNG)|![](Assets/hw5-14.PNG)|
+|![](Assets/hw5n-8.PNG)|![](Assets/hw5n-5.PNG)|![](Assets/hw5-6.PNG)|![](Assets/hw5-4.PNG)|
+|![](Assets/hw5n-3.PNG)|![](Assets/hw5n-2.PNG)|![](Assets/hw5-17.PNG)|![](Assets/hw5-15.PNG)|
+|![](Assets/hw5n-9.PNG)|![](Assets/hw5n-7.PNG)|![](Assets/hw5-10.PNG)|![](Assets/hw5-11.PNG)|
+|![](Assets/hw5n-12.PNG)|![](Assets/hw5n-13.PNG)|![](Assets/hw5-18.PNG)|![](Assets/hw5-19.PNG)|
+|![](Assets/hw5n-24.PNG)|![](Assets/hw5n-20.PNG)|![](Assets/hw5-21.PNG)|![](Assets/hw5-22.PNG)|
+|![](Assets/hw5n-31.PNG)|![](Assets/hw5n-32.PNG)|![](Assets/hw5-23.PNG)|![](Assets/hw5-25.PNG)
 
 
 ### 2.Camera Support
@@ -37,7 +36,7 @@
 **Important Notice**: To use the camera feature, please run the app on a real device (not simulator), and grant permission for camera access.
 
  
-|![](Assets/hw5n-13.png)|![](Assets/hw5n-18.png)|![](Assets/hw5n-19.png)|
+|![](Assets/hw5n-13.PNG)|![](Assets/hw5n-18.PNG)|![](Assets/hw5n-19.PNG)|
 |---|---|---| 
 
 ### 3.Non-TextField Input Controls
@@ -45,7 +44,7 @@
 - Another style of picker for Gender and Role (Left)
 - Self-designed picker for Languages and Hobbies (Right). This picker is more like a tag picker, and it supports multiple selection. The selected items will be shown in the text field.
 
-|![](Assets/hw5n-2.png)|![](Assets/hw5n-6.png)|![](Assets/hw5n-3.png)|
+|![](Assets/hw5n-2.PNG)|![](Assets/hw5n-6.PNG)|![](Assets/hw5n-3.PNG)|
 |---|---|---| 
 
 - Even more complex location picker. This picker will show a map, and user can select a location by tapping on the map. The location will be transferred into [City, State, Country] format shown in the text field.
@@ -53,7 +52,7 @@
 **Important Notice**: The Apple built-in lib converts the coordinates into place names using your phone's locale. So if you want to see the result in English, please set your phone's locale to English. Otherwise, the result will be in your phone's locale language.
 
 
-|![](Assets/hw5n-16.png)|![](Assets/hw5n-8.png)|![](Assets/hw5n-5.png)|
+|![](Assets/hw5n-16.PNG)|![](Assets/hw5n-8.PNG)|![](Assets/hw5n-5.PNG)|
 |---|---|---| 
 
 <br />

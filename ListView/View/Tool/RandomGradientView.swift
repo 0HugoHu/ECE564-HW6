@@ -26,14 +26,14 @@ struct RandomGradientView: View {
     
     func randomBeautifulColor() -> Color {
         let beautifulColors: [Color] = [
-            Color(red: 0.0, green: 0.6, blue: 0.8).opacity(0.4),  // Light Blue
-            Color(red: 0.9, green: 0.2, blue: 0.4).opacity(0.4),  // Red
-            Color(red: 0.0, green: 0.8, blue: 0.4).opacity(0.4),  // Green
-            Color(red: 0.9, green: 0.4, blue: 0.0).opacity(0.4),  // Orange
-            Color(red: 0.6, green: 0.0, blue: 0.6).opacity(0.4),  // Purple
-            Color(red: 0.1, green: 0.7, blue: 0.5).opacity(0.4),  // Teal
-            Color(red: 0.7, green: 0.3, blue: 0.6).opacity(0.4),  // Magenta
-            Color(red: 0.3, green: 0.7, blue: 0.3).opacity(0.4),  // Lime Green
+            Color(red: 0.0, green: 0.6, blue: 0.8).opacity(0.2),  // Light Blue
+            Color(red: 0.9, green: 0.2, blue: 0.4).opacity(0.2),  // Red
+            Color(red: 0.0, green: 0.8, blue: 0.4).opacity(0.2),  // Green
+            Color(red: 0.9, green: 0.4, blue: 0.0).opacity(0.2),  // Orange
+            Color(red: 0.6, green: 0.0, blue: 0.6).opacity(0.2),  // Purple
+            Color(red: 0.1, green: 0.7, blue: 0.5).opacity(0.2),  // Teal
+            Color(red: 0.7, green: 0.3, blue: 0.6).opacity(0.2),  // Magenta
+            Color(red: 0.3, green: 0.7, blue: 0.3).opacity(0.3),  // Lime Green
         ]
         
         return beautifulColors.randomElement() ?? .blue

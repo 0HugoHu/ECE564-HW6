@@ -49,30 +49,55 @@ class DukeStatsViewModel: ObservableObject {
     
     var programs: [String: Int] {
         let programCounts = dataModel.reduce(into: [String: Int]()) { (result, person) in
-            let programName = person.program
-            result[programName, default: 0] += 1
+            let program = person.program.lowercased()
+            if program.contains("a&s") || program.contains("ms") || program.contains("science") {
+                result["M.S.", default: 0] += 1
+            } else if program.contains("ece") || program.contains("engr") || program.contains("engineer") || program.contains("e.") {
+                result["M.Eng.", default: 0] += 1
+            } else {
+                result["Other", default: 0] += 1
+            }
         }
         return programCounts
     }
+
     
     var plans: [String: Int] {
         let planCounts = dataModel.reduce(into: [String: Int]()) { (result, person) in
-            let planName = person.plan
-            result[planName, default: 0] += 1
+            let plan = person.plan.lowercased() + person.program.lowercased()
+            if plan.contains("econ") {
+                result["EconCS", default: 0] += 1
+            } else if plan.contains("cs") || plan.contains("computer science") {
+                result["CS", default: 0] += 1
+            } else if plan.contains("ece") || plan.contains("elec") || plan.contains("egr") || plan.contains("engineer") {
+                result["ECE", default: 0] += 1
+            } else {
+                result["Other", default: 0] += 1
+            }
         }
         return planCounts
     }
+
     
-    
-    var froms: [String: Int] {
-        let fromCounts = dataModel.reduce(into: [String: Int]()) { (result, person) in
-            let fromName = person.from
-            result[fromName, default: 0] += 1
+    var languages: [String: Int] {
+        let languageCounts = dataModel.reduce(into: [String: Int]()) { (result, person) in
+            if let personLanguages = person.languages {
+                for language in personLanguages {
+                    // Special case
+                    var newLanguage = language
+                    newLanguage.replace("and ", with: "")
+                    let normalizedLanguage = newLanguage.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                    let individualLanguages = normalizedLanguage.components(separatedBy: ",")
+                    
+                    for individualLanguage in individualLanguages {
+                        let trimmedLanguage = individualLanguage.trimmingCharacters(in: .whitespacesAndNewlines)
+                        result[trimmedLanguage.capitalized, default: 0] += 1
+                    }
+                }
+            }
         }
-        return fromCounts
+        return languageCounts
     }
-    
-    
 
     var totalImageSize: String {
         let totalSizeInBytes = dataModel.reduce(0) { $0 + $1.picture.count }
@@ -90,22 +115,32 @@ class DukeStatsViewModel: ObservableObject {
 
 
     var largestImageSizeOwner: String {
-        // Calculate the owner with the largest image size
         guard let person = dataModel.max(by: { $0.picture.count < $1.picture.count }) else {
             return "N/A"
         }
         let totalSizeInKB = Double(person.picture.count) / 1000.0
+        if totalSizeInKB >= 1000 {
+            return "\(String(format: "%.2f MB", totalSizeInKB / 1000.0))$\(person.fName) \(person.lName)"
+        }
         return "\(String(format: "%.2f KB", totalSizeInKB))$\(person.fName) \(person.lName)"
     }
 
     var smallestImageSizeOwner: String {
-        // Calculate the owner with the smallest image size
         guard let person = dataModel.min(by: { $0.picture.count < $1.picture.count }) else {
             return "N/A"
         }
         let totalSizeInKB = Double(person.picture.count) / 1000.0
         return "\(String(format: "%.2f KB", totalSizeInKB))$\(person.fName) \(person.lName)"
     }
+    
+    var hugoImageSizeOwner: String {
+        guard let person = dataModel.first(where: { $0.DUID == DUID}) else {
+            return "N/A"
+        }
+        let totalSizeInKB = Double(person.picture.count) / 1000.0
+        return "\(String(format: "%.2f KB", totalSizeInKB))$\(person.fName) \(person.lName)"
+    }
+
 
     var mostHobbiesOwner: String {
         // Calculate the owner with the most hobbies

@@ -8,6 +8,15 @@
         "branch" : "main",
         "revision" : "214bfa49040ccab90f485c70cc2615eeb0d1d291"
       }
+    },
+    {
+      "identity" : "locationpickerforswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alessiorubicini/LocationPickerForSwiftUI",
+      "state" : {
+        "revision" : "8abd6171a4ff0af2fea59f1721d4783efc11e6a5",
+        "version" : "1.1.1"
+      }
     }
   ],
   "version" : 2

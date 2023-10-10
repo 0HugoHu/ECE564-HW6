@@ -21,8 +21,14 @@ struct DukePeopleList: View {
     @State private var isEditViewActive = false
     @State private var selectedDUID: Int = -1
     
+    
     var peopleList: [DukePerson] {
         return Array(dataModel.people.values)
+    }
+    
+    func addEditViewToPresent() -> some View {
+        return AddEditView(dukePerson: dataModel.find(selectedDUID)!, isEditing: true, isPresented: $isEditViewActive)
+            .environmentObject(dataModel)
     }
     
     var body: some View {
@@ -37,7 +43,15 @@ struct DukePeopleList: View {
                         Spacer()
                         
                         Button(action: {
-                            selectedDUID = -1
+                            for i in 0...100 {
+                                if dataModel.find(i) == nil {
+                                    selectedDUID = i
+                                    if dataModel.add(DukePerson(DUID: i)) {
+                                        break
+                                    }
+                                }
+                            }
+                            print("\(String(selectedDUID))")
                             isEditViewActive = true
                         }) {
                             Image(systemName: "plus")
@@ -158,7 +172,9 @@ struct DukePeopleList: View {
                                     }
                                     .swipeActions {
                                         Button(action: {
-                                            if dataModel.delete(professor.DUID) {}
+                                            if dataModel.delete(professor.DUID) {
+                                                if dataModel.save() {}
+                                            }
                                         }) {
                                             Label("Delete", systemImage: "trash")
                                         }
@@ -190,7 +206,9 @@ struct DukePeopleList: View {
                                     }
                                     .swipeActions {
                                         Button(action: {
-                                            if dataModel.delete(ta.DUID) {}
+                                            if dataModel.delete(ta.DUID) {
+                                                if dataModel.save() {}
+                                            }
                                         }) {
                                             Label("Delete", systemImage: "trash")
                                         }
@@ -222,7 +240,9 @@ struct DukePeopleList: View {
                                     }
                                     .swipeActions {
                                         Button(action: {
-                                            if dataModel.delete(student.DUID) {}
+                                            if dataModel.delete(student.DUID) {
+                                                if dataModel.save() {}
+                                            }
                                         }) {
                                             Label("Delete", systemImage: "trash")
                                         }
@@ -254,7 +274,43 @@ struct DukePeopleList: View {
                                     }
                                     .swipeActions {
                                         Button(action: {
-                                            if dataModel.delete(others.DUID) {}
+                                            if dataModel.delete(others.DUID) {
+                                                if dataModel.save() {}
+                                            }
+                                        }) {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+                                        .tint(.red)
+                                        
+                                        Button(action: {
+                                            selectedDUID = others.DUID
+                                            isEditViewActive = true
+                                        }) {
+                                            Label("Edit", systemImage: "pencil")
+                                        }
+                                        .tint(.blue)
+                                    }
+                                }
+                            } else {
+                                NoResult()
+                            }
+                        }
+                        .listRowSeparator(.hidden)
+                        
+                        Section(header: Text("Unknown").font(.title2).fontWeight(.bold)) {
+                            let filteredUnknowns = filterByRole(.Unknown, searchText, peopleList, isRegexSearch, isFieldSearch)
+                            if !filteredUnknowns.isEmpty {
+                                ForEach(filteredUnknowns, id: \.DUID) { others in
+                                    NavigationLink(
+                                        destination: DukePeopleListDetails(dukePerson: others)
+                                    ) {
+                                        DukePeopleListItem(dukePerson: others)
+                                    }
+                                    .swipeActions {
+                                        Button(action: {
+                                            if dataModel.delete(others.DUID) {
+                                                if dataModel.save() {}
+                                            }
                                         }) {
                                             Label("Delete", systemImage: "trash")
                                         }
@@ -369,7 +425,7 @@ struct DukePeopleList: View {
                                     .padding(.top, -16)
                                     .offset(y: -74)
                                     .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 3)
-                                    
+                                
                                 Button(action: {
                                     showDownloadMoreOptions = false
                                     downloadReplace = true
@@ -469,7 +525,7 @@ struct DukePeopleList: View {
             }
             .blur(radius: isEditViewActive ? 10 : 0)
             .sheet(isPresented: $isEditViewActive) {
-                AddEditView(DUID: selectedDUID).environmentObject(dataModel)
+                addEditViewToPresent()
             }
             
             ShadowedDivider()

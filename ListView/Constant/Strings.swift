@@ -68,6 +68,10 @@ let othersHelpText = """
 let DUID = 1177060
 let netID = "yh342"
 
+let TA1DUID = 1036039
+let TA2DUID = 1184353
+let ProfDUID = 664541
+
 let authString = "yh342:d50fdd0e33cd121a55dfe22b87085a8297511caac2e6b2e82d89e3c5da68faa7"
 
 let junkString = "asdowapegonapwoiengpoiwnpoiawnepofnawpoienfopiwaemfoiwamepfoiwnpgoiw"

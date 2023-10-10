@@ -114,7 +114,7 @@ struct StatsView: View {
                         .chartXAxis(.hidden)
                         .chartYAxis(.hidden)
                     }
-                    .frame(height: 350)
+                    .frame(height: 150)
                     .background(Color.white)
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 3)
@@ -148,7 +148,7 @@ struct StatsView: View {
                         .chartXAxis(.hidden)
                         .chartYAxis(.hidden)
                     }
-                    .frame(height: 500)
+                    .frame(height: 200)
                     .background(Color.white)
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 3)
@@ -159,8 +159,8 @@ struct StatsView: View {
                 
                 // From
                 VStack {
-                    GroupBox("From") {
-                        let programData: [ChartData] = viewModel.froms.map { (gender, count) in
+                    GroupBox("Programming Language") {
+                        let programData: [ChartData] = viewModel.languages.map { (gender, count) in
                             return ChartData(key: gender, value: Double(count))
                         }
                         
@@ -231,6 +231,21 @@ struct StatsView: View {
                     }
                     .padding([.top, .bottom], 8)
                     
+                    HStack {
+                        Text("Hugo's Image:")
+                            .foregroundColor(.primary)
+                        let content = viewModel.hugoImageSizeOwner.split(separator: "$")
+                        Text("\(String(content[0]))")
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                            .bold()
+                        Text("- \(String(content[1]))")
+                            .font(.headline)
+                            .foregroundColor(.accentColor)
+                            .bold()
+                    }
+                    .padding([.top, .bottom], 8)
+                    
                     let hobby = viewModel.mostHobbiesOwner.split(separator: "$")
                     HStack {
                         Text("Most Hobbies:")
@@ -286,7 +301,7 @@ struct StatsView: View {
                         .frame(height: 0)
                 }
                 .padding()
-                .frame(height: 280)
+                .frame(height: 320)
                 .background(Color.white)
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 3)

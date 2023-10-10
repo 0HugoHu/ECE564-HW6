@@ -5,4 +5,8 @@
 //  Created by Hugooooo on 10/9/23.
 //
 
-import Foundation
+enum ImageSourceType {
+    case background
+    case foreground
+    case pencil
+}

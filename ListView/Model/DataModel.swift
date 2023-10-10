@@ -59,6 +59,24 @@ struct DukePerson : CustomStringConvertible, Codable {
         }
     }
     
+    init(DUID: Int) {
+        self.DUID = DUID
+        self.fName = ""
+        self.lName = ""
+        self.email = ""
+        self.from = ""
+        self.gender = .Unknown
+        self.role = .Unknown
+        self.program = ""
+        self.plan = ""
+        self.picture = ""
+        self.hobby = ""
+        self.languages = [String]()
+        self.movie = ""
+        self.team = ""
+        self.netid = ""
+    }
+    
     init(DUID: Int, fName: String, lName: String, email: String, from: String, gender: Gender, role: Role) {
         self.DUID = DUID
         self.fName = fName
@@ -67,14 +85,14 @@ struct DukePerson : CustomStringConvertible, Codable {
         self.from = from
         self.gender = gender
         self.role = role
-        self.program = "??"
-        self.plan = "??"
-        self.picture = "??"
-        self.hobby = "??"
+        self.program = ""
+        self.plan = ""
+        self.picture = ""
+        self.hobby = ""
         self.languages = [String]()
-        self.movie = "??"
-        self.team = "??"
-        self.netid = "??"
+        self.movie = ""
+        self.team = ""
+        self.netid = ""
     }
     
     init(DUID: Int, fName: String, lName: String, email: String, from: String, gender: Gender, role: Role, program: String, plan: String, picture: String) {
@@ -88,11 +106,11 @@ struct DukePerson : CustomStringConvertible, Codable {
         self.program = program
         self.plan = plan
         self.picture = picture
-        self.hobby = "??"
+        self.hobby = ""
         self.languages = [String]()
-        self.movie = "??"
-        self.team = "??"
-        self.netid = "??"
+        self.movie = ""
+        self.team = ""
+        self.netid = ""
     }
     
     init(DUID: Int, netid: String, fName: String, lName: String, email: String, from: String, gender: Gender, role: Role, program: String, plan: String, picture: String, hobby: String, languages: [String], movie: String, team: String) {
@@ -122,6 +140,7 @@ class DukePersonDict : NSObject, URLSessionDownloadDelegate, ObservableObject {
     @Published var people: [Int : DukePerson]
     @Published var downloadProgress: Double = 0.0
     @Published var isDownloading: Bool = false
+    @Published var isUploading: Bool = false
     
     var url: URL
     var errorFlag: Bool = true
@@ -161,6 +180,7 @@ class DukePersonDict : NSObject, URLSessionDownloadDelegate, ObservableObject {
         if people[newPerson.DUID] != nil {
             return false
         }
+//        people[newPerson.DUID] = DukePerson(DUID: newPerson.DUID, netid: newPerson.netid ?? "", fName: newPerson.fName, lName: newPerson.lName, email: newPerson.email, from: newPerson.from, gender: newPerson.gender, role: newPerson.role, program: newPerson.program, plan: newPerson.plan, picture: newPerson.picture, hobby: newPerson.hobby ?? "", languages: newPerson.languages ?? [String](), movie: newPerson.movie ?? "", team: newPerson.team ?? "")
         people[newPerson.DUID] = newPerson
         return true
     }
@@ -199,6 +219,38 @@ class DukePersonDict : NSObject, URLSessionDownloadDelegate, ObservableObject {
         
         if updatedPerson.role != .Unknown {
             people[updatedPerson.DUID]!.role = updatedPerson.role
+        }
+        
+        if let netid = updatedPerson.netid, !netid.isEmpty {
+            people[updatedPerson.DUID]!.netid = netid
+        }
+        
+        if !updatedPerson.program.isEmpty {
+            people[updatedPerson.DUID]!.program = updatedPerson.program
+        }
+        
+        if !updatedPerson.plan.isEmpty {
+            people[updatedPerson.DUID]!.plan = updatedPerson.plan
+        }
+        
+        if !updatedPerson.picture.isEmpty {
+            people[updatedPerson.DUID]!.picture = updatedPerson.picture
+        }
+        
+        if let hobby = updatedPerson.hobby, !hobby.isEmpty {
+            people[updatedPerson.DUID]!.hobby = hobby
+        }
+        
+        if let languages = updatedPerson.languages, !languages.isEmpty {
+            people[updatedPerson.DUID]!.languages = languages
+        }
+        
+        if let movie = updatedPerson.movie, !movie.isEmpty {
+            people[updatedPerson.DUID]!.movie = movie
+        }
+        
+        if let team = updatedPerson.team, !team.isEmpty {
+            people[updatedPerson.DUID]!.team = team
         }
         
         return true
@@ -338,19 +390,19 @@ class DukePersonDict : NSObject, URLSessionDownloadDelegate, ObservableObject {
                 
                 for i in 0..<dukePeopleArray.count {
                     if dukePeopleArray[i].hobby == nil {
-                        dukePeopleArray[i].hobby = "??"
+                        dukePeopleArray[i].hobby = ""
                     }
                     if dukePeopleArray[i].languages == nil {
                         dukePeopleArray[i].languages = [String]()
                     }
                     if dukePeopleArray[i].team == nil {
-                        dukePeopleArray[i].team = "??"
+                        dukePeopleArray[i].team = ""
                     }
                     if dukePeopleArray[i].movie == nil {
-                        dukePeopleArray[i].movie = "??"
+                        dukePeopleArray[i].movie = ""
                     }
                     if dukePeopleArray[i].netid == nil {
-                        dukePeopleArray[i].netid = "??"
+                        dukePeopleArray[i].netid = ""
                     }
                     dukePeopleArray[i].email.replace("‎ ", with: "")
                 }
@@ -404,65 +456,62 @@ class DukePersonDict : NSObject, URLSessionDownloadDelegate, ObservableObject {
     /*
      Uploads the data model to the specified website.
      */
-    //    func upload(website: String, auth: String, update: Bool) -> Bool {
-    //        self.errorFlag = false
-    //        let urlString = website + (update ? "/\(netID)" : "/create")
-    //        guard let url = URL(string: urlString) else {
-    //            errorFlag = true
-    //            errorMessage = "Invalid URL!"
-    //            return false
-    //        }
-    //
-    //        var request = URLRequest(url: url)
-    //        request.httpMethod = update ? "PUT" : "POST"
-    //
-    //        // Set the HTTP header for Authorization
-    //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    //        let base64Auth = auth.data(using: .utf8)!.base64EncodedString()
-    //        let authValue = "Basic \(base64Auth)"
-    //        request.setValue(authValue, forHTTPHeaderField: "Authorization")
-    //
-    //        do {
-    //            let jsonData: Data
-    //            if update {
-    //                // Use data model stored in memory
-    //                jsonData = try JSONEncoder().encode(dataModel.find(DUID)!)
-    //            } else {
-    //                // Use default dictionary defined in Strings.swift
-    //                jsonData = try JSONSerialization.data(withJSONObject: jsonDictionary, options: [])
-    //            }
-    //
-    //            request.httpBody = jsonData
-    //
-    //            let httpTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    //                DispatchQueue.main.async {
-    //                    if let error = error {
-    //                        self.errorFlag = true
-    //                        self.errorMessage = "Error creating POST or PUT request: \(error)"
-    //                        self.statusLabel.text = self.errorMessage
-    //                    } else if let httpResponse = response as? HTTPURLResponse {
-    //                        if httpResponse.statusCode == 200 {
-    //                            self.errorFlag = false
-    //                            self.statusLabel.text = "Upload Complete!"
-    //                        } else {
-    //                            self.errorFlag = true
-    //                            self.errorMessage = "Upload response error: \(httpResponse.statusCode)"
-    //                            self.statusLabel.text = self.errorMessage
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //            httpTask.resume()
-    //        } catch {
-    //            DispatchQueue.main.async {
-    //                self.errorFlag = true
-    //                self.errorMessage = "Error encoding JSON data: \(error)"
-    //                self.statusLabel.text = self.errorMessage
-    //            }
-    //        }
-    //
-    //        return !self.errorFlag
-    //    }
+    func upload(website: String, auth: String, update: Bool) -> Bool {
+        self.isUploading = true
+        self.errorFlag = false
+        let urlString = website + (update ? "/\(netID)" : "/create")
+        guard let url = URL(string: urlString) else {
+            errorFlag = true
+            errorMessage = "Invalid URL!"
+            return false
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = update ? "PUT" : "POST"
+        
+        // Set the HTTP header for Authorization
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let base64Auth = auth.data(using: .utf8)!.base64EncodedString()
+        let authValue = "Basic \(base64Auth)"
+        request.setValue(authValue, forHTTPHeaderField: "Authorization")
+        
+        do {
+            let jsonData: Data
+            if update {
+                // Use data model stored in memory
+                jsonData = try JSONEncoder().encode(self.find(DUID)!)
+            } else {
+                // Use default dictionary defined in Strings.swift
+                jsonData = try JSONSerialization.data(withJSONObject: jsonDictionary, options: [])
+            }
+            
+            request.httpBody = jsonData
+            
+            let httpTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                DispatchQueue.main.async {
+                    if error != nil {
+                        self.isUploading = false
+                        print("1: Error uploading data: \(error!)")
+                    } else if let httpResponse = response as? HTTPURLResponse {
+                        if httpResponse.statusCode == 200 {
+                            self.isUploading = false
+                        } else {
+                            self.isUploading = false
+                            print("2: Error uploading data: \(httpResponse.statusCode)")
+                        }
+                    }
+                }
+            }
+            httpTask.resume()
+        } catch {
+            DispatchQueue.main.async {
+                self.isUploading = false
+                print("3: Error uploading data: \(error)")
+            }
+        }
+        
+        return !self.errorFlag
+    }
     
     
     /*

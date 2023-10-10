@@ -21,7 +21,7 @@ struct DukePeopleListDetails: View {
             ScrollView {
                 ZStack {
                     // Profile Image
-                    var removalImage: UIImage = {
+                    let removalImage: UIImage = {
                         do {
                             let util = GetImageBase64()
                             let image = util.imageFromBase64(base64String: dukePerson.picture)
@@ -37,7 +37,7 @@ struct DukePeopleListDetails: View {
                     Image(uiImage: removalImage)
                         .resizable()
                         .frame(width: 200, height: 200)
-                        .offset(y: dukePerson.DUID == 1184353 || dukePerson.DUID == 1036039 ? -100 : -120)
+                        .offset(y: dukePerson.DUID == 1184353 || dukePerson.DUID == 1036039 ? -150 : -175)
                     
                     VStack {
                         // Basic Info Card
@@ -52,14 +52,17 @@ struct DukePeopleListDetails: View {
                                     Text("NetID: \(dukePerson.netid ?? "")")
                                     Text("DUID: \(String(dukePerson.DUID))")
                                 }
+                                .padding([.bottom], 2)
                                 GridRow {
                                     Text("Gender: \(dukePerson.gender.rawValue)")
                                     Text("Role: \(dukePerson.role.rawValue)")
                                 }
-                                GridRow {
-                                    Text("Email: \(dukePerson.email)")
-                                    Text("From: \(dukePerson.from)")
-                                }
+                                .padding([.bottom], 2)
+                                
+                                Text("Email: \(String(dukePerson.email).trimmingCharacters(in: .whitespacesAndNewlines))")
+                                    .padding([.bottom], 2)
+                                
+                                Text("From: \(String(dukePerson.from).trimmingCharacters(in: .whitespacesAndNewlines))")
                             }
                             .padding(.bottom, -8)
                             Text(junkString)
@@ -77,14 +80,16 @@ struct DukePeopleListDetails: View {
                         // Team Info Card
                         if let team = dukePerson.team {
                             VStack(alignment: .leading) {
-                                Text("Team: \(team)")
+                                Text("Team")
+                                    .font(.title3)
+                                    .padding(.bottom, 8)
+                                Text("\(team)")
                                     .font(.subheadline)
-                                    .padding()
-                                    .padding(.bottom, -8)
                                 Text(junkString)
                                     .foregroundColor(.clear)
                                     .frame(height: 0)
                             }
+                            .padding()
                             .font(.subheadline)
                             .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
                             .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 3)
@@ -96,9 +101,14 @@ struct DukePeopleListDetails: View {
                         VStack(alignment: .leading) {
                             Text("About \(dukePerson.fName)")
                                 .font(.title3)
+                                .padding(.bottom, 8)
                             
                             Text(dukePerson.description)
                                 .font(.subheadline)
+                            
+                            Text(junkString)
+                                .foregroundColor(.clear)
+                                .frame(height: 0)
                         }
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
@@ -111,6 +121,9 @@ struct DukePeopleListDetails: View {
                     }
                     .offset(y: 170)
                 }
+                
+                VStack {}
+                    .frame(height: 300)
             }
             .navigationTitle(dukePerson.fName)
             .navigationBarTitleDisplayMode(.inline)

@@ -75,7 +75,9 @@ struct AddEditView: View {
         let plan = (dukePerson.plan + dukePerson.program).lowercased()
         
         self._selectedProgram = State(initialValue: {
-            if program.matches("(a&s|ms|science)") {
+            if program.matches("(under)") {
+                return 2
+            } else if program.matches("(a&s|ms|science)") {
                 return 4
             } else if program.matches("(under|b\\.\\s*|bach).*?(ece|engr|engineer|e\\.)") {
                 return 2

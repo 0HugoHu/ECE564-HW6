@@ -18,16 +18,17 @@
 - Floating second-level button added for choosing download/replace or download/update
 - Fixed stats view error
 
+
 | | | | |
 |---|---|---|---|
-|![](Assets/hw5n-30.PNG)|![](Assets/hw5n-1.PNG)|![](Assets/hw5-29.PNG)|![](Assets/hw5-28.PNG)|
-|![](Assets/hw5n-27.PNG)|![](Assets/hw5n-26.PNG)|![](Assets/hw5-16.PNG)|![](Assets/hw5-14.PNG)|
-|![](Assets/hw5n-8.PNG)|![](Assets/hw5n-5.PNG)|![](Assets/hw5-6.PNG)|![](Assets/hw5-4.PNG)|
-|![](Assets/hw5n-3.PNG)|![](Assets/hw5n-2.PNG)|![](Assets/hw5-17.PNG)|![](Assets/hw5-15.PNG)|
-|![](Assets/hw5n-9.PNG)|![](Assets/hw5n-7.PNG)|![](Assets/hw5-10.PNG)|![](Assets/hw5-11.PNG)|
-|![](Assets/hw5n-12.PNG)|![](Assets/hw5n-13.PNG)|![](Assets/hw5-18.PNG)|![](Assets/hw5-19.PNG)|
-|![](Assets/hw5n-24.PNG)|![](Assets/hw5n-20.PNG)|![](Assets/hw5-21.PNG)|![](Assets/hw5-22.PNG)|
-|![](Assets/hw5n-31.PNG)|![](Assets/hw5n-32.PNG)|![](Assets/hw5-23.PNG)|![](Assets/hw5-25.PNG)|
+|![](Assets/hw5n-30.PNG)|![](Assets/hw5n-1.PNG)|![](Assets/hw5n-29.PNG)|![](Assets/hw5n-28.PNG)|
+|![](Assets/hw5n-27.PNG)|![](Assets/hw5n-26.PNG)|![](Assets/hw5n-16.PNG)|![](Assets/hw5n-14.PNG)|
+|![](Assets/hw5n-8.PNG)|![](Assets/hw5n-5.PNG)|![](Assets/hw5n-6.PNG)|![](Assets/hw5n-4.PNG)|
+|![](Assets/hw5n-3.PNG)|![](Assets/hw5n-2.PNG)|![](Assets/hw5n-17.PNG)|![](Assets/hw5n-15.PNG)|
+|![](Assets/hw5n-9.PNG)|![](Assets/hw5n-7.PNG)|![](Assets/hw5n-10.PNG)|![](Assets/hw5n-11.PNG)|
+|![](Assets/hw5n-12.PNG)|![](Assets/hw5n-13.PNG)|![](Assets/hw5n-18.PNG)|![](Assets/hw5n-19.PNG)|
+|![](Assets/hw5n-24.PNG)|![](Assets/hw5n-20.PNG)|![](Assets/hw5n-21.PNG)|![](Assets/hw5n-22.PNG)|
+|![](Assets/hw5n-31.PNG)|![](Assets/hw5n-32.PNG)|![](Assets/hw5n-23.PNG)|![](Assets/hw5n-25.PNG)|
 
 
 ### 2.Camera Support

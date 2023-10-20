@@ -21,20 +21,19 @@
 - The badge background (six circles) is patinted by paths, as well as all those hobbies and languages shapes (18 kinds)
 - Randomly generated colors for the badge backgroud and foreground
 
-
 ### 5. Use Badges to Represent Hobby and Languages
 - Badges to map the hobbies and languages
+
+### 6. New Groups Saved to Local Disk
+- Save group's name and search words to disk so the next time open the app the group still exists
 
 | | | |
 |---|---|---|
 |![](Assets/hw6-1.png)|![](Assets/hw6-2.png)|![](Assets/hw6-3.png)|
 |![](Assets/hw6-4.png)|![](Assets/hw6-5.png)| |
-|![](Assets/hw6-6.png)|![](Assets/hw6-7.png)|![](Assets/hw6-8.png)||
+|![](Assets/hw6-8.png)|![](Assets/hw6-7.png)|![](Assets/hw6-6.png)||
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 942c9167cc564733ede1228eefe2aae9b8509cad
 <br />
 
 ## Code Reference

@@ -112,3 +112,82 @@ func filterByRole(_ role: Role, _ searchText: String, _ peopleList: [DukePerson]
         }
     }
 }
+
+
+func filterBySearch(_ searchText: String, _ peopleList: [DukePerson]) -> [DukePerson] {
+    let searchPairs = searchText.components(separatedBy: ",")
+    
+    return peopleList.filter { person in
+        return searchPairs.allSatisfy { searchPair in
+            let components = searchPair.components(separatedBy: "=")
+            if components.count == 2 {
+                let (key, value) = (components[0].trimmingCharacters(in: .whitespacesAndNewlines), components[1].trimmingCharacters(in: .whitespacesAndNewlines))
+                switch key {
+                case "id":
+                    if let id = Int(value), id != person.DUID {
+                        return false
+                    }
+                case "netid":
+                    if let netid = person.netid, !netid.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "fn":
+                    if !person.fName.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "ln":
+                    if !person.lName.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "em":
+                    if !person.email.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "fr":
+                    if !person.from.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "ge":
+                    if !person.gender.rawValue.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "ro":
+                    if !person.role.rawValue.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "pr":
+                    if !person.program.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "pl":
+                    if !person.plan.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "ho":
+                    if let hobby = person.hobby, !hobby.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "la":
+                    if let languages = person.languages, !languages.contains(where: { $0.lowercased().contains(value.lowercased()) }) {
+                        return false
+                    }
+                case "mo":
+                    if let movie = person.movie, !movie.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "te":
+                    if let team = person.team, !team.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                case "desc":
+                    if !person.description.lowercased().contains(value.lowercased()) {
+                        return false
+                    }
+                default:
+                    return false
+                }
+            }
+            return true
+        }
+    }
+}

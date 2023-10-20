@@ -120,28 +120,29 @@ struct AddEditView: View {
                     }()
                     ZStack {
                         // Background Image
-                        Image("Avatar")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 200, height: 200)
-                            .edgesIgnoringSafeArea(.all)
-                            .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
-                            .onTapGesture {
-                                invokeCamera()
-                            }
+//                        Image("Avatar")
+//                            .resizable()
+//                            .scaledToFill()
+//                            .frame(width: 200, height: 200)
+//                            .edgesIgnoringSafeArea(.all)
+//                            .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
+//                            .onTapGesture {
+//                                invokeCamera()
+//                            }
                         
                         // Foreground Image
                         Image(uiImage: removalImage)
                             .resizable()
-                            .frame(width: 150, height: 150)
-                            .overlay(Circle().stroke(Color.yellow, lineWidth: 2))
+                            .frame(width: 170, height: 170)
+                            .overlay(Circle().stroke(Color.gray.opacity(0.5), lineWidth: 2))
                             .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 3)
                             .onTapGesture {
                                 invokeCamera()
                             }
                         
                         Image(systemName: "square.and.pencil")
-                            .offset(x: 90, y: 80)
+                            .offset(x: 75, y: 75)
                             .shadow(color: Color.black.opacity(0.4), radius: 4, x: 0, y: 3)
                             .onTapGesture {
                                 invokeCamera()
@@ -540,7 +541,7 @@ struct AddEditView: View {
                                     }
                                 }
                             }) {
-                                Image(systemName: "arrowshape.up.circle.fill")
+                                Image(systemName: "arrow.up.circle.fill")
                                     .resizable()
                                     .frame(width: 48, height: 48)
                                     .foregroundColor(dukePerson.DUID == DUID && !dataModel.isUploading ? Color.red : Color.gray)
@@ -570,7 +571,7 @@ struct AddEditView: View {
                                 self.isPresented = false
                             }
                         }) {
-                            Image(systemName: "arrowshape.down.circle.fill")
+                            Image(systemName: "arrow.down.to.line.circle.fill")
                                 .resizable()
                                 .frame(width: 48, height: 48)
                                 .foregroundColor(Color.accentColor)

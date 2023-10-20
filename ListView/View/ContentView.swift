@@ -14,6 +14,7 @@ struct ContentView: View {
     enum Tab {
         case list
         case stats
+        case group
     }
     
     var body: some View {
@@ -25,6 +26,13 @@ struct ContentView: View {
                 }
                 .tag(Tab.list)
         
+            GroupView()
+                .environmentObject(dataModel)
+                .tabItem {
+                    Label("Groups", systemImage: "person.2")
+                }
+                .tag(Tab.group)
+            
             StatsView()
                 .environmentObject(dataModel)
                 .tabItem {

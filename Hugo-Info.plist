@@ -15,5 +15,8 @@
 	</array>
     <key>NSCameraUsageDescription</key>
     <string>We need access to the camera for taking your profile photos.</string>
+    
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
 </dict>
 </plist>
